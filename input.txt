@@ -1,0 +1,16 @@
+This file contains characters that are encoded with UTF-8.
+When recoding this file, the following line works fine, 
+because all characters have a position in the target 
+character set (ISO 8859-1):
+
+    åäö§ß
+
+The next line, however, contains characters that have no
+representation in the target character set (ISO 8859-1),
+and iconv will inform about this, aborting after the first
+character:
+
+   ῶᾶΦθ
+
+If there's an HTML entity for the character, one can -
+manually - convert these characters to such entities.
